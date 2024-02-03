@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+h3 {
+    font-weight: normal;
+}
+
+.sua-classe {
+    border: 2px dashed #999;
+}
+
+.borda-exemplo {
+    border: 2px solid #000; /* Largura da borda, tipo e cor */
+    padding: 10px; /* Espaçamento interno para melhor visualização */
+  }
