@@ -1,118 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Conexões de rede</title>
-</head>
-<body>
-    <div class="borda-exemplo"></div>
-    <h1>Conexões de Rede </h1>
-    <h2>As redes de computadores podem ser caracterizadas pelo seu tamanho e pela finalidade. O tamanho de uma rede pode ser expresso pela área geográfica que ocupam e pelo número de computadores que fazem parte da rede. As redes podem abranger desde um punhado de dispositivos em uma única sala até milhões de dispositivos espalhados por todo o mundo.</h2>    
-    
-    <div style="height: 20px;"></div>
-    <h2>Existem três tipos básicos de conexões de rede:</h2>
-    <h2>Peer-to-peer (P2P):</h2> <h3> Permite que um dispositivo comunique-se diretamente com outro dispositivo. Por exemplo, dois telefones podem emparelhar um com o outro para trocar informações de contato ou imagens.</h3>
-    <h2>Broadcast/multicast:</h2><h3> Permitem que um dispositivo envie uma mensagem para a rede e tenha cópias dessa mensagem entregues a vários destinatários. </h3>
-    <h2>Multipoint:</h2> <h3> Permitem que um dispositivo conecte-se diretamente e entregue mensagens para vários dispositivos em paralelo.</h3>
-    <br>
-    <h3>Nem todas as tecnologias de rede suportam a criação de todos os tipos de conexões</h3>
-    
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz sobre Conexões de Rede</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
 
-    
-    <h2>Diferentes tipos de conexão comumente usados:</h2>
-    
-    <h2>Banda larga</h2> <h3>O termo banda larga pode significar várias coisas, mas muitos consumidores associam-no ao conceito de serviço de Internet de alta velocidade, instalado em um local específico. Redes privadas em residências, escolas, empresas e outras organizações geralmente conectam-se à Internet via banda larga fixa.</h3>
-        <img src="/Img/banda-larga.jpg" width="500px">
-    <h2>Banda larga sem fio</h2> <h3>Além dessas opções que envolvem cabeamento, existem os serviços de banda larga fixa sem fio (não confundir com banda larga móvel) baseados em transmissores de rádio de microondas. A comunicação torre a torre em redes celulares também se qualifica como uma espécie de sistema fixo de banda larga sem fio.</h3>
+    <button onclick="irParaPagina1()">Voltar página inicial</button>
 
-    <h2>Internet móvel</h2> <h3>O termo "Internet móvel" refere-se a vários tipos de serviços de Internet que podem ser acessados por meio de uma conexão sem fio, em vários locais diferentes.</h3>
-        <img src="/Img/internetmovel.jpg" width="500px">
-    <h2>Rede Privada Virtual (VPN)</h2><h3> Uma rede privada virtual (VPN) consiste no hardware, no software e nas conexões necessárias para oferecer suporte a comunicações de redes protegidas pela infraestrutura de rede pública, por meio de um método chamado tunelamento.</h3>
-        <img src="/Img/vpn.jpg" width="500px">
-    <h2>Redes dial-up</h2><h3>Conexões de rede dial-up permitem comunicações TCP / IP através de linhas telefônicas comuns.</h3>
-        <img src="/Img/redes_dial-up.jpg" width="500px">
-    <h2>Rede local (LAN)</h2><h3>As pessoas associam redes de computadores a LANs mais do que qualquer outro tipo de conexão de rede. Uma rede local consiste em uma coleção de dispositivos localizados próximos uns aos outros (como em uma casa ou em um prédio de escritórios), conectados a equipamentos de rede compartilhados (como roteadores de banda larga ou comutadores de rede) que os dispositivos usam para se comunicar uns com os outros, com redes externas.</h3>
-        <img src="/Img/lan_tap.webp" width="500px">
-    <h2>Redes Diretas </h2><h3>Conexões de rede dedicadas entre dois dispositivos (que nenhum outro dispositivo pode compartilhar) também são chamadas de conexões diretas. As redes diretas diferem das redes peer-to-peer, pois as redes peer contêm um maior número de dispositivos, entre os quais muitas conexões peer-to-perr podem ser feitas.</h3>
-        <img src="/Img/redes_diretas.jpg" width="500px">
-    
-        <div style="height: 40px;"></div>
+    <script>
+        function irParaPagina1() {
+            window.location.href = "index2.html";
+        }
+    </script>
+    <div id="quiz-container">
+      <h2>Quiz sobre Conexões de Rede</h2>
+      <div id="question-container"></div>
+      <div id="options-container" class="options"></div>
+      <button id="next-btn">Próxima Pergunta</button>
+      <div id="result"></div>
+    </div>
 
-    <h1>Tipos de rede</h1> 
-        <img src="/Img/tipos-de-rede.jpg" width="500px">
-    <h3>Rede de computadores é uma malha que interliga milhares de sistemas computacionais para a transmissão de dados. Também conhecidos como nós, esses dispositivos interconectados enviam, recebem e trocam tráfego de dados, voz e vídeo, graças ao hardware e software que compõem o ambiente.</h3>
-    <h3>Atualmente existem diferentes tipos de redes, como redes cabeadas, redes sem fio, redes locais, redes externas, redes virtuais privativas entre outros tipos. Nomenclaturas como LAN, MAN, WLAN, WMAN, WWAN, SAN e PAN geralmente se fundem em apenas dois conceitos: redes locais e redes remotas.</h3>
-    
-    <h2>LAN - Rede Local</h2>
-        <h3>As chamadas Local Area Networks, ou Redes Locais, interligam computadores presentes dentro de um mesmo espaço físico. Isso pode acontecer dentro de uma empresa, de uma escola ou dentro da sua própria casa, sendo possível a troca de informações e recursos entre os dispositivos participantes.</h3>
-    <h2>MAN - Rede Metropolitana </h2>
-            <img src="/Img/man.png" width="500px">
-        <h3>Imaginemos, por exemplo, que uma empresa possui dois escritórios em uma mesma cidade e deseja que os computadores permaneçam interligados. Para isso existe a Metropolitan Area Network, ou Rede Metropolitana, que conecta diversas Redes Locais dentro de algumas dezenas de quilômetros.</h3>
-   
-    <h2>WAN - (Rede de Longa Distância)</h2>
-            <img src="/Img/wan.gif" width="500px">
-        <h3>A Wide Area Network, ou Rede de Longa Distância, vai um pouco além da MAN e consegue abranger uma área maior, como um país ou até mesmo um continente.</h3>
-   
-        <h2>WLAN - (Rede Local Sem Fio)</h2>
-            <img src="/Img/wlan.png" width="500px">
-        <h3>Esse tipo de rede conecta-se à internet e é bastante usado tanto em ambientes residenciais quanto em empresas e em lugares públicos.</h3>
-    
-        <h2>WMAN - (Rede Metropolitana Sem Fio)</h2>
-            <img src="/Img/wman.jpg" width="500px">
-        <h3>Esta é a versão sem fio da MAN, com um alcance de dezenas de quilômetros, sendo possível conectar redes de escritórios de uma mesma empresa ou de campus de universidades.</h3>
-   
-        <h2>SAN- (Storage Area Networks)</h2>
-            <img src="/Img/san.png" width="500px">
-        <h3>Também designadas de redes de armazenamento, têm como objectivo a interligação entre vários computadores e dispositivos de armazenamento (storage) numa área limitada. Considerando que é fundamental que essas redes tenham grandes débitos (rápido acesso à informação), utilizam tecnologias como por exemplo Fiber Channel.</h3>
-    
-        <h2>PAN- (Personal Area Networks)</h2>
-            <img src="/Img/pan.png" width="500px">
-        <h3>Também designadas de redes de área pessoal, são redes que usam tecnologias de rede sem fios para interligar os mais variados dispositivos (computadores, smartphones, etc) numa área muito reduzida. Exemplo de uma rede ad-hoc.</h3>
-
-    
-    <h1>Tipos de ligação </h1>
-    <h2>Conexões de Rede:</h2>
-    <h3>Internet: Uma tecnologia de comunicação de dados com fio amplamente usada para conectar dispositivos em redes locais (LANs).</h3>
-    <h3>Wi-Fi: Conexão sem fio que permite a comunicação entre dispositivos através de ondas de rádio.</h3>
-    
-    
-    <h2>Conexões de Dados:</h2>
-    <h3>USB (Universal Serial Bus): Utilizado para conectar dispositivos como impressoras, teclados, mouse, entre outros, ao computador.</h3>
-    <h3>HDMI (High-Definition Multimedia Interface): Usado para transmitir áudio e vídeo em alta definição entre dispositivos.</h3>
-    
-    
-    <h2>Conexões de Armazenamento:</h2>
-    <h3>SATA (Serial ATA): Interface para conexão de dispositivos de armazenamento, como discos rígidos e unidades de estado sólido (SSD).</h3>
-    <h3>Thunderbolt: Oferece alta velocidade para transferência de dados e suporta a conexão de vários dispositivos.</h3>
-    
-    
-    <h2>Conexões de Periféricos:</h2>
-    <h3>Bluetooth: Usado para conectar dispositivos sem fio de curto alcance, como fones de ouvido, teclados e mouses.</h3>
-    <h3>NFC (Near Field Communication): Permite a comunicação sem fio entre dispositivos em curtas distâncias.</h3>
-    
-    
-    <h2>Conexões de Internet:</h2>
-    <h3>DSL (Digital Subscriber Line): Utilizado para conexões de banda larga através da linha telefônica.</h3>
-    <h3>Fibra Óptica: Fornece conexões de alta velocidade usando cabos de fibra óptica.</h3>
-    
-    
-    <h2>Conexões em Programação:</h2>
-    <h3>API (Interface de Programação de Aplicações): Permite que diferentes softwares se comuniquem e compartilhem dados.</h3>
-    <h3>Web Services: Facilita a comunicação entre sistemas e aplicativos pela internet.</h3>
-    
-    
-    <h2>Conexões em Banco de Dados:</h2>
-    <h3>ODBC (Open Database Connectivity): Padrão para acessar bancos de dados relacionais.</h3>
-    <h3>JDBC (Java Database Connectivity): Permite que programas Java interajam com bancos.</h3>                 
-
-
-    <a href="https://catalogo.anqep.gov.pt/ufcdDetalhe/756"> Catálogo Nacional de Qualificações</a><br>
-<br><h4>Realizado por:</h4>
-<h5>Abdaisy Conceição <br>
-    Lara Pires. <br>
-PI1</h5>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
