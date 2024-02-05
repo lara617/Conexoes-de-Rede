@@ -102,87 +102,82 @@ const questions = [
     },
   ];
   let currentQuestionIndex = 0;
-  let score = 0;
-  let restartButton = null;
-  
-  function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    showQuestion();
-  }
-  
-  function showQuestion() {
-    const questionContainer = document.getElementById("question-container");
-    const optionsContainer = document.getElementById("options-container");
-    const resultContainer = document.getElementById("result");
-    const nextButton = document.getElementById("next-btn");
-  
-    if (currentQuestionIndex < questions.length) {
-      const currentQuestionData = questions[currentQuestionIndex];
-      questionContainer.textContent = currentQuestionData.question;
-  
-      optionsContainer.innerHTML = "";
-      currentQuestionData.answers.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.className = "option answer-btn";
-        button.addEventListener("click", () => checkAnswer(index));
-        optionsContainer.appendChild(button);
-      });
-  
-      resultContainer.textContent = "";
-      nextButton.style.display = "none";
-    } else {
-      showResult();
-    }
-  }
-  
-  function checkAnswer(selectedIndex) {
-    const correctLabel = questions[currentQuestionIndex].correctAnswer;
-  
-    if (correctLabel === String.fromCharCode(97 + selectedIndex)) {
-      score++;
-    }
-  
-    currentQuestionIndex++;
-  
-    showQuestion();
-  }
-  
-  function showResult() {
-    const quizContainer = document.getElementById("quiz-container");
-    const resultContainer = document.getElementById("result");
-    const nextButton = document.getElementById("next-btn");
-  
-    resultContainer.textContent = `Você acertou ${score} de ${questions.length} perguntas.`;
+let score = 0;
+let incorrectQuestions = [];
+let restartButton = null;
 
-  
-    if (!restartButton) {
-      restartButton = document.createElement("button");
-      restartButton.textContent = "Reiniciar Quiz";
-      restartButton.className = "restart-btn";
-      restartButton.addEventListener("click", () => {
-        startQuiz();
-      });
-      quizContainer.appendChild(restartButton);
-    }
-  
-    nextButton.style.display = "none";
-  }
-  
-  document.addEventListener("DOMContentLoaded", startQuiz);
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  incorrectQuestions = [];
+  showQuestion();
+}
 
-  
+function showQuestion() {
+  const questionContainer = document.getElementById("question-container");
+  const optionsContainer = document.getElementById("options-container");
+  const resultContainer = document.getElementById("result");
+  const nextButton = document.getElementById("next-btn");
 
+  if (currentQuestionIndex < questions.length) {
+    const currentQuestionData = questions[currentQuestionIndex];
+    questionContainer.textContent = currentQuestionData.question;
 
-function irParaIndex(index) {
-    // Esconder todos os índices
-    var indices = document.querySelectorAll('.index');
-    indices.forEach(function(element) {
-        element.classList.remove('active');
+    optionsContainer.innerHTML = "";
+    currentQuestionData.answers.forEach((option, index) => {
+      const button = document.createElement("button");
+      button.textContent = option;
+      button.className = "option answer-btn";
+      button.addEventListener("click", () => checkAnswer(index));
+      optionsContainer.appendChild(button);
     });
 
-    // Mostrar o índice desejado
-    var indexAtual = document.getElementById('index' + index);
-    indexAtual.classList.add('active');
+    resultContainer.textContent = "";
+    nextButton.style.display = "none";
+  } else {
+    showResult();
+  }
 }
+
+function checkAnswer(selectedIndex) {
+  const correctLabel = questions[currentQuestionIndex].correctAnswer;
+
+  if (correctLabel === String.fromCharCode(97 + selectedIndex)) {
+    score++;
+  } else {
+    incorrectQuestions.push(currentQuestionIndex);
+  }
+
+  currentQuestionIndex++;
+
+  showQuestion();
+}
+
+function showResult() {
+  const quizContainer = document.getElementById("quiz-container");
+  const resultContainer = document.getElementById("result");
+  const nextButton = document.getElementById("next-btn");
+
+  resultContainer.textContent = `Você acertou ${score} de ${questions.length} perguntas.`;
+
+  if (incorrectQuestions.length > 0) {
+    resultContainer.innerHTML += "<br>Perguntas incorretas:";
+    incorrectQuestions.forEach((index) => {
+      resultContainer.innerHTML += `<br>${questions[index].question}`;
+    });
+  }
+
+  if (!restartButton) {
+    restartButton = document.createElement("button");
+    restartButton.textContent = "Reiniciar Quiz";
+    restartButton.className = "restart-btn";
+    restartButton.addEventListener("click", () => {
+      startQuiz();
+    });
+    quizContainer.appendChild(restartButton);
+  }
+
+  nextButton.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", startQuiz);
